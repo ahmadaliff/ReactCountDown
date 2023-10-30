@@ -1,0 +1,34 @@
+@import "./Color.scss";
+@mixin displayFlexCenter($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+@mixin CardComp($background) {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  left: 0;
+  background-color: $background;
+  z-index: 10;
+}
+@mixin lineComp {
+  content: "";
+  height: 0.5rem;
+  width: 0.25rem;
+  position: absolute;
+  z-index: 13;
+  transform: translateY(-50%);
+  background-color: $line-card-color;
+}
+@mixin animate($animation, $duration, $method) {
+  animation: $animation $duration $method;
+}
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
